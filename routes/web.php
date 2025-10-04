@@ -2,8 +2,6 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProfileController;
-use App\Http\Controllers\UserController;
-use App\Http\Controllers\MataKuliahController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -20,5 +18,3 @@ Route::get('/', function () {
 });
 
 Route::get('/profile/{nama}/{npm}/{kelas}',[ProfileController::class,'profile']);
-Route::resource('users', UserController::class);
-Route::resource('mk', MataKuliahController::class);
