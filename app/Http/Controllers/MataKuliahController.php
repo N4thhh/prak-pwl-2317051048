@@ -3,16 +3,16 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\mata_kuliah;
+use App\Models\MataKuliah;
 
 class MataKuliahController extends Controller
 {
     public function index(){
         $data =[
             'title' => 'List MK',
-            'mks' => mata_kuliah::all(),
+            'mks' => MataKuliah::all(),
         ];
-        return view('list_mk', compact('data'));
+        return view('list_mk', $data);
     }
 
     public function create(){
@@ -22,7 +22,7 @@ class MataKuliahController extends Controller
     }
 
     public function store(Request $request){
-        mata_kuliah::create([
+        MataKuliah::create([
             'nama_mk' => $request->input('nama_mk'),
             'sks' => $request->input('sks'),
         ]);
