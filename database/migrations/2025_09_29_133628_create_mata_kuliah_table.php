@@ -11,19 +11,17 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('users', function (Blueprint $table) {
-            $table->id();
+        Schema::create('mata_kuliah', function (Blueprint $table) {
+            $table->uuid('id')->primary();
             $table->string('nama_mk');
             $table->string('sks');
             $table->timestamps();
         });
     }
 
-    /**
-     * Reverse the migrations.
-     */
+    
     public function down(): void
     {
-        Schema::dropIfExists('users');
+        Schema::dropIfExists('mata_kuliah');
     }
 };
