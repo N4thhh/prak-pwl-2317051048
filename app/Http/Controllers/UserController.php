@@ -31,12 +31,12 @@ class UserController extends Controller
             'title' => 'Create User',
             'kelas' => $kelas,
         ];
-        return view('create_usr', $data);
+        return view('create_user', $data);
     }
 
     public function index(){
         $data =[
-            'title' => 'User',
+            'title' => 'List User',
             'user' => $this->userModel->getUser(),
         ];
         return view('list_user', $data);
