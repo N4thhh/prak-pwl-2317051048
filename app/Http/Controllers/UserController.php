@@ -37,7 +37,7 @@ class UserController extends Controller
     public function index(){
         $data =[
             'title' => 'List User',
-            'user' => $this->userModel->getUser(),
+            'users' => $this->userModel->getUser(),
         ];
         return view('list_user', $data);
     }

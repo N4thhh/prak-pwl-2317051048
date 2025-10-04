@@ -17,8 +17,8 @@ class UserModel extends Model
     }
     
     public function getUser(){
-        return $this->join('kelas', 'kelas_id', '=', 'user.kelas.id')
-                    ->select('user.*','kelas.nama_kelas as nama_kelas')
-                    ->get();
+        return $this->join('kelas', 'user.kelas_id', '=', 'kelas.id')
+                ->select('user.*', 'kelas.nama_kelas')
+                ->get();
     }
 }
