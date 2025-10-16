@@ -22,3 +22,6 @@ Route::get('/', function () {
 Route::get('/profile/{nama}/{npm}/{kelas}',[ProfileController::class,'profile']);
 Route::resource('users', UserController::class);
 Route::resource('mk', MataKuliahController::class);
+Route::get('/mk/{id}/edit', [MataKuliahController::class, 'edit'])->name('mk.edit');
+Route::put('/mk/{id}', [MataKuliahController::class, 'update'])->name('mk.update');
+Route::delete('/mk/{id}', [MataKuliahController::class, 'destroy'])->name('mk.destroy');
